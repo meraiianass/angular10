@@ -29,10 +29,10 @@ steps:
   
 - task: PublishBuildArtifacts@1
   inputs:
-    pathToPublish: '/home/vsts/work/1/s' 
+    pathToPublish: '$(Build.SourcesDirectory)' 
     artifactName: 'angular10' 
 
 - task: DownloadPipelineArtifact@2  
   displayName: 'Download Pipeline Artifact'  
   inputs:  
-    targetPath: ' /home/vsts/work/1/s/dist/angular10'
+    targetPath: ' $(Build.SourcesDirectory)/dist/angular10'
