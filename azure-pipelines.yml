@@ -27,14 +27,15 @@ steps:
     verbose: false  
     customCommand: 'build'   
   
-- task: PublishBuildArtifacts@1
-  displayName: 'test'  
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'test'
-    publishLocation: 'Container'
+- task: CopyPublishBuildArtifacts@1  
+  displayName: 'Copy Publish Artifact: test'  
+  inputs:  
+    CopyRoot: dist  
+    Contents: '**'  
+    ArtifactName: test  
+    ArtifactType: Container  
   
 - task: DownloadPipelineArtifact@2  
   displayName: 'Download Pipeline Artifact'  
   inputs:  
-    targetPath: ' $(Build.ArtifactStagingDirectory)'  
+    targetPath: ' $(Build.ArtifactStagingDirectory)/dist/Angular10'
