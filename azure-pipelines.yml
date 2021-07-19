@@ -32,7 +32,6 @@ steps:
     pathToPublish: '$(Build.ArtifactStagingDirectory)' 
     artifactName: 'angular10' 
 
-  
 - task: DownloadPipelineArtifact@2  
   displayName: 'Download Pipeline Artifact'  
   inputs:  
