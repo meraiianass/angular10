@@ -27,13 +27,12 @@ steps:
     verbose: false  
     customCommand: 'build'   
   
-- task: CopyPublishBuildArtifacts@1  
-  displayName: 'Copy Publish Artifact: test'  
-  inputs:  
-    CopyRoot: dist  
-    Contents: '**'  
-    ArtifactName: test  
-    ArtifactType: Container  
+- task: PublishBuildArtifacts@1
+  displayName: ' Publish Artifact: test'  
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'test'
+    publishLocation: 'Container'
   
 - task: DownloadPipelineArtifact@2  
   displayName: 'Download Pipeline Artifact'  
