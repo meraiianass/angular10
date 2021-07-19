@@ -28,7 +28,7 @@ steps:
     customCommand: 'build'   
   
 - task: PublishBuildArtifacts@1
-  displayName: ' Publish Artifact: test'  
+  displayName: 'test'  
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'test'
