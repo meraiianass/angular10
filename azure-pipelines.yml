@@ -29,7 +29,7 @@ steps:
 
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: $(System.DefaultWorkingDirectory)/angular10/dist
+    targetPath: $(System.DefaultWorkingDirectory)/dist/angular10
     artifactName: WebApp
   
 - task: CopyPublishBuildArtifacts@1  
