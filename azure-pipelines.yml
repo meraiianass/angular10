@@ -25,7 +25,7 @@ steps:
   inputs:  
     command: custom  
     verbose: false  
-    customCommand: 'build'  
+    customCommand: 'run ng build'  
 
   
 - task: CopyPublishBuildArtifacts@1  
