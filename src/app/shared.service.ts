@@ -7,8 +7,8 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class SharedService {
-readonly APIUrl="https://meraianasswebapp.azurewebsites.net/api";
-readonly PhotoUrl = "https://meraianasswebapp.azurewebsites.net/Photos/";
+readonly APIUrl="https://backendcontainer.azurewebsites.net/api";
+readonly PhotoUrl = "https://backendcontainer.azurewebsites.net/Photos/";
 
   constructor(private http:HttpClient) { }
 
