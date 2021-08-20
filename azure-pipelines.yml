@@ -36,18 +36,14 @@ steps:
 - task: Docker@0
   displayName: 'Build an image'
   inputs:
-    containerregistrytype: 'Azure Container Registry'
     azureSubscription: 'Visual Studio-MariemKh-001 (135ef5ea-7239-433e-a3f3-a3721838f137)'
     azureContainerRegistry: '{"loginServer":"webappcontainermeraianass.azurecr.io", "id" : "/subscriptions/135ef5ea-7239-433e-a3f3-a3721838f137/resourceGroups/MeraiAnassRG/providers/Microsoft.ContainerRegistry/registries/WebAppContainerMeraiAnass"}'
-    action: 'Build an image'
-    dockerFile: '**/Dockerfile'
-    imageName: '$(Build.Repository.Name):$(Build.BuildId)'
+    dockerFile: Dockerfile
+
 
 - task: Docker@0
   displayName: 'Push an image'
   inputs:
-    containerregistrytype: 'Azure Container Registry'
     azureSubscription: 'Visual Studio-MariemKh-001 (135ef5ea-7239-433e-a3f3-a3721838f137)'
     azureContainerRegistry: '{"loginServer":"webappcontainermeraianass.azurecr.io", "id" : "/subscriptions/135ef5ea-7239-433e-a3f3-a3721838f137/resourceGroups/MeraiAnassRG/providers/Microsoft.ContainerRegistry/registries/WebAppContainerMeraiAnass"}'
     action: 'Push an image'
-    imageName: '$(Build.Repository.Name):$(Build.BuildId)'
